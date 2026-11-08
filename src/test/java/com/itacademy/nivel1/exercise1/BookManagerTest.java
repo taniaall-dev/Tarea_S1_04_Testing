@@ -70,9 +70,7 @@ public class BookManagerTest {
         initialBooks.add(new Book("Book 1", "Author 1"));
         initialBooks.add(new Book("Book 1", "Author 2"));
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            new BookManager(initialBooks);
-        });
+        assertThrows(IllegalArgumentException.class, () -> new BookManager(initialBooks));
     }
 
     @Test
@@ -83,9 +81,7 @@ public class BookManagerTest {
 
         BookManager bookManager = new BookManager(initialBooks);
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            bookManager.addBook(1,(new Book("Book 1", "Other author")));
-        });
+        assertThrows(IllegalArgumentException.class, () -> bookManager.addBook(1,(new Book("Book 1", "Other author"))));
     }
 
     @Test
@@ -98,9 +94,7 @@ public class BookManagerTest {
         newBooks.add(new Book("Book 3", "Author 3"));
         newBooks.add(new Book("Book 2", "Author 4"));
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            bookManager.addBooks(newBooks);
-        });
+        assertThrows(IllegalArgumentException.class, () -> bookManager.addBooks(newBooks));
     }
 
     @Test
