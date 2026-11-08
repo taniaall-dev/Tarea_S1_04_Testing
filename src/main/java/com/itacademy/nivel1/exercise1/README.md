@@ -1,31 +1,101 @@
-## Tests unitarios con JUnit
+# Tests unitarios con JUnit 5
 
-En este ejercicio nos iniciaremos en el mundo del testing automatizado mediante un ejemplo práctico: la gestión de una colección de libros de biblioteca.
+## Descripción
 
-El objetivo principal es aprender a escribir tests unitarios con JUnit 5 para asegurar que nuestra lógica funciona correctamente. Además, integraremos JUnit en el proyecto utilizando un gestor de dependencias como Maven o Gradle .
+Ejercicio práctico de testing automatizado en Java mediante JUnit 5. Se desarrolla una clase `BookManager` encargada de gestionar una colección de libros y se implementan tests unitarios para verificar el correcto funcionamiento de sus métodos.
 
-Este ejercicio te permitirá establecer una base sólida en el desarrollo orientado a la calidad y empezar a aplicar buenas prácticas que son esenciales en entornos profesionales.
+El proyecto utiliza Maven para gestionar las dependencias e integrar JUnit 5.
 
-### Enunciado
+## 📌 Instrucciones del ejercicio
 
-Crea una clase Java que gestione una colección de libros de una biblioteca. 
+Desarrollar una clase Java que gestione una colección de libros de biblioteca y permita realizar diferentes operaciones sobre ella.
 
-Esta clase debe ofrecer las siguientes funcionalidades:
+Implementar tests unitarios con JUnit 5 para comprobar el comportamiento de la clase y verificar que cumple los requisitos establecidos en el enunciado.
 
-- Añadir libros a la colección.
-- Recuperar la lista completa de libros (siguiendo el comando de inserción).
-- Obtener el título de un libro a partir de su posición.
-- Añadir un libro en una posición específica en la colección.
-- Eliminar un libro por su título.
-- Devolver una copia de la lista ordenada alfabéticamente.
+### Objetivos del ejercicio
 
-Implementa test unitarios con JUnit 5 para validar el comportamiento de la clase. Asegúrate de cubrir, como mínimo, los siguientes casos:
+- Familiarizarse con el testing automatizado.
+- Aprender a utilizar JUnit 5 para desarrollar tests unitarios.
+- Verificar el comportamiento de los métodos de una clase.
+- Comprobar que se cumplen las condiciones establecidas mediante aserciones.
+- Identificar y comprobar situaciones en las que deben producirse excepciones.
 
-- La colección no debe ser nula después de instanciar la clase.
-- El tamaño de la colección es correcto después de añadir varios libros.
-- Los libros se encuentran en la posición esperada una vez añadidos.
-- El método para obtener un libro por posición devuelve el título correcto.
-- Añadir un libro en una posición concreta modifica correctamente la colección.
-- Eliminar un libro por el título reduce el tamaño de la colección.
-- La lista ordenada devuelve los libros en orden alfabético (sin modificar la colección original).
-- No deben permitirse libros con títulos duplicados.
+## ✨ Características
+
+### Book
+
+Clase que representa un libro y contiene:
+
+- `title`: título del libro.
+- `author`: autor del libro.
+- Constructor para inicializar sus atributos.
+- Getters y setters para acceder y modificar sus propiedades.
+- `toString()`: representación textual del libro.
+
+### BookManager
+
+Clase encargada de gestionar la colección de libros mediante una lista interna (`ArrayList`).
+
+- **Constructor:** inicializa la colección y añade los libros recibidos, realizando una copia de cada objeto.
+- **addBooks():** añade una colección de libros.
+- **getBooks():** devuelve una copia no modificable de la lista.
+- **getTitleByIndex():** obtiene el título de un libro a partir de su posición.
+- **addBook():** inserta un libro en una posición específica.
+- **deleteBookByTitle():** elimina los libros que coinciden con el título indicado.
+- **getSortedBooksAsc():** devuelve una nueva lista ordenada alfabéticamente por título, sin modificar la colección original.
+- **validateTitle():** valida que los títulos no sean nulos, vacíos o duplicados. La comparación de títulos no distingue entre mayúsculas y minúsculas.
+
+Las operaciones de inserción y el constructor utilizan esta validación para evitar títulos duplicados y no válidos.
+
+## 📚 Investigación: Testing unitario con JUnit 5
+
+### ¿Qué son los tests unitarios?
+
+Los tests unitarios son pruebas automatizadas que permiten comprobar el comportamiento de pequeñas unidades de código de forma independiente, normalmente métodos o clases.
+
+Su objetivo es verificar que el código funciona según lo esperado y detectar errores cuando se producen cambios durante el desarrollo.
+
+### JUnit 5
+
+JUnit 5 es un framework de testing para Java que permite escribir y ejecutar pruebas automatizadas.
+
+En este ejercicio se utiliza la anotación `@Test` para identificar los métodos que contienen pruebas unitarias.
+
+Para integrar JUnit 5 en el proyecto se ha añadido su dependencia en el archivo `pom.xml`, utilizando Maven y el ámbito `test`, ya que únicamente es necesaria durante la ejecución de las pruebas.
+
+### Assertions
+
+Las aserciones permiten comprobar si el resultado obtenido coincide con el esperado. Si una aserción falla, el test se considera fallido.
+
+En este ejercicio se utilizan:
+
+- **assertNotNull():** comprueba que un objeto no sea nulo.
+- **assertEquals():** verifica que dos valores sean iguales.
+- **assertThrows():** comprueba que una operación lance la excepción esperada.
+
+En particular, `assertThrows()` permite verificar que los métodos rechazan operaciones no válidas, como intentar introducir títulos duplicados.
+
+## 🧪 Pruebas realizadas
+
+Se han implementado 10 tests unitarios en la clase `BookManagerTest` para comprobar los diferentes comportamientos de `BookManager`.
+
+| Test | Comportamiento comprobado |
+|---|---|
+| `constructor_shouldInitializeCollection()` | La colección se inicializa correctamente aunque el constructor reciba una lista nula. |
+| `addBooks_shouldAddAllBooksToCollection()` | Se añaden todos los libros de una colección y se actualiza correctamente el tamaño. |
+| `addBook_shouldBeInTheExpectedPosition()` | El libro añadido se encuentra en la posición esperada. |
+| `getTitleByIndex_shouldReturnTitleAtSpecifiedPosition()` | Se obtiene el título correcto a partir de una posición. |
+| `addBook_shouldInsertBookAtSpecifiedPosition()` | Se inserta un libro en la posición indicada y se comprueba el tamaño resultante. |
+| `constructor_shouldThrowExceptionWithDuplicateTitles()` | El constructor rechaza una colección con títulos duplicados. |
+| `addBook_shouldThrowExceptionWhenTitleAlreadyExists()` | Se impide añadir un libro cuyo título ya existe. |
+| `addBooks_shouldThrowExceptionWhenTitleAlreadyExists()` | Se impide añadir una colección que contiene un título duplicado. |
+| `deleteBookByTitle_shouldReduceSizeCollection()` | La eliminación de un libro reduce el tamaño de la colección. |
+| `getSortedBooksAsc_returnsBooksAlphabeticallyWithoutModifyingOriginal()` | La lista devuelta está ordenada alfabéticamente sin modificar el orden de la colección original. |
+
+## 📝 Conclusión
+
+Este ejercicio ha permitido dar los primeros pasos en el testing automatizado con JUnit 5 y comprender la importancia de verificar el comportamiento del código mediante pruebas unitarias.
+
+Se han practicado las aserciones básicas, la comprobación de excepciones y la validación de diferentes operaciones sobre una colección de objetos.
+
+El uso de tests permite detectar errores de forma temprana y aporta mayor seguridad a la hora de modificar y ampliar el código.
