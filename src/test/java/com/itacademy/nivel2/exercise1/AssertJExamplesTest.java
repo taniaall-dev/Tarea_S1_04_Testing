@@ -40,9 +40,9 @@ public class AssertJExamplesTest {
     public void shouldVerifyObjectListContentsAndOccurrences() {
         List<Object> objects = assertJExamples.createObjectList();
 
-        assertThat(objects).containsExactly("Anna","Anna",21,65.5);
+        assertThat(objects).containsExactly("Anna", "Anna", 21, 65.5);
         assertThat(objects).containsOnlyOnce(21);
-        assertThat(objects).containsExactlyInAnyOrder("Anna","Anna",21,65.5);
+        assertThat(objects).containsExactlyInAnyOrder("Anna", "Anna", 21, 65.5);
         assertThat(objects).doesNotContain("Peter");
     }
 
@@ -56,11 +56,12 @@ public class AssertJExamplesTest {
     @Test
     public void shouldThrowArrayIndexOutOfBoundsExceptionWhenAccessingInvalidPosition() {
         assertThatExceptionOfType(ArrayIndexOutOfBoundsException.class)
-                .isThrownBy(() -> assertJExamples.accessInvalidArrayPosition());    }
+                .isThrownBy(() -> assertJExamples.accessInvalidArrayPosition());
+    }
 
     @Test
     public void shouldVerifyOptionalIsEmpty() {
-        Optional <String> optional = assertJExamples.createEmptyOptional();
+        Optional<String> optional = assertJExamples.createEmptyOptional();
 
         assertThat(optional).isEmpty();
     }
