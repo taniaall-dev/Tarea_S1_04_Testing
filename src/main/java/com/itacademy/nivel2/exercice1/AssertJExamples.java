@@ -4,8 +4,8 @@ import java.util.*;
 
 public class AssertJExamples {
 
-    public Integer[] createIntegerValues () {
-        Integer [] numbers = {1,1,2,3};
+    public Integer[] createIntegerValues() {
+        Integer[] numbers = {1, 1, 2, 3};
 
         return numbers;
     }
@@ -15,7 +15,7 @@ public class AssertJExamples {
         String second = first;
         String third = new String("C");
 
-        String [] references = {
+        String[] references = {
                 first,
                 second,
                 third
@@ -25,9 +25,8 @@ public class AssertJExamples {
     }
 
     public Integer[][] createIdenticalArrays() {
-        Integer[] numbers1 = {1,2,3,4};
-
-        Integer[] numbers2 = {1,2,3,4};
+        Integer[] numbers1 = {1, 2, 3, 4};
+        Integer[] numbers2 = {1, 2, 3, 4};
 
         Integer[][] twoArrays = {numbers1, numbers2};
 
