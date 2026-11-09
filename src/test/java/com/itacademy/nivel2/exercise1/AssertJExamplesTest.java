@@ -31,7 +31,7 @@ public class AssertJExamplesTest {
 
     @Test
     public void shouldVerifyArraysContainExactlyTheSameElements() {
-        Integer[][] twoArrays = assertJExamples.createArraysIdentic();
+        Integer[][] twoArrays = assertJExamples.createIdenticalArrays();
 
         assertThat(twoArrays[0]).containsExactly(twoArrays[1]);
     }
