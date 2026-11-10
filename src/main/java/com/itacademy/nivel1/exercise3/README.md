@@ -51,6 +51,27 @@ Se ha implementado un test unitario para comprobar el comportamiento del método
 
 **Resultado esperado:** el test finaliza correctamente al detectar la excepción prevista.
 
+## ▶️ Ejecución del proyecto y tests
+
+### Ejecutar el proyecto
+
+Este ejercicio está centrado en el control de excepciones mediante testing unitario, por lo que no requiere ejecutar una aplicación de forma independiente. El comportamiento se comprueba mediante los tests de JUnit 5.
+
+### Ejecutar los tests
+
+Los tests pueden ejecutarse de las siguientes maneras:
+
+- **Desde IntelliJ IDEA:** abrir la clase `ArrayExceptionHandlerTest` y pulsar el icono verde de ejecución situado junto a la clase para ejecutar los tests, o junto al método para ejecutar una prueba individual.
+- **Desde Maven:** abrir la terminal en la carpeta raíz del proyecto y ejecutar:
+
+```bash
+mvn test
+```
+
+Este comando compila el proyecto, ejecuta los tests y muestra los resultados de las pruebas.
+
+Los resultados también pueden consultarse en IntelliJ IDEA, donde se indica si los tests han finalizado correctamente o han fallado.
+
 ## 🎯 Conclusión
 
 Este ejercicio permite comprender cómo Java lanza automáticamente excepciones cuando se realizan operaciones no válidas y cómo JUnit 5 permite verificar estos comportamientos mediante tests automatizados.
