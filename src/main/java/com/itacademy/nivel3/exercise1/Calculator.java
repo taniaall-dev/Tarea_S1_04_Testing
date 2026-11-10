@@ -7,10 +7,7 @@ public class Calculator {
         return total;
     }
 
-    public void add (int num) {
-        if(num < 1) {
-            throw new IllegalArgumentException("Positive number required");
-        }
+    public void add(int num) {
         total += num;
     }
 
@@ -23,7 +20,7 @@ public class Calculator {
     }
 
     public void divide(int num) {
-        if(num == 0) {
+        if (num == 0) {
             throw new ArithmeticException("Error: division by 0 is not possible");
         }
         total /= num;
