@@ -46,6 +46,36 @@ Se comprueban los siguientes comportamientos:
 
 Se utiliza `@BeforeEach` para crear una nueva instancia de `Calculator` antes de cada test, garantizando que las pruebas sean independientes entre sí.
 
+## 📚 Investigación: conceptos de testing
+
+### TDD (Test-Driven Development)
+
+TDD es una metodología de desarrollo en la que las pruebas se escriben antes que el código de producción.
+
+Se basa en tres fases:
+
+- **Red:** escribir una prueba que falla porque todavía no existe la funcionalidad.
+- **Green:** implementar el código mínimo necesario para que la prueba pase.
+- **Refactor:** mejorar el código sin alterar su comportamiento y manteniendo las pruebas en verde.
+
+### JUnit 5
+
+JUnit 5 es un framework de testing para Java que permite crear y ejecutar pruebas unitarias.
+
+En este ejercicio se utilizan:
+
+- `@Test`: identifica los métodos que contienen pruebas.
+- `@BeforeEach`: ejecuta un método antes de cada prueba, permitiendo preparar un estado inicial independiente.
+
+### AssertJ
+
+AssertJ es una biblioteca que permite escribir aserciones de forma fluida y legible.
+
+En este ejercicio se utilizan:
+
+- `assertThat()`: comprueba que un resultado cumple una condición esperada.
+- `assertThatExceptionOfType()`: comprueba que una operación lanza una excepción del tipo indicado.
+
 ## 🧪 Testing: metodología TDD
 
 El desarrollo sigue el ciclo **Red – Green – Refactor**:
@@ -80,36 +110,6 @@ mvn test
 ```
 
 Maven compilará el proyecto, ejecutará los tests y mostrará el resultado de las pruebas.
-
-## 📚 Investigación: conceptos de testing
-
-### TDD (Test-Driven Development)
-
-TDD es una metodología de desarrollo en la que las pruebas se escriben antes que el código de producción.
-
-Se basa en tres fases:
-
-- **Red:** escribir una prueba que falla porque todavía no existe la funcionalidad.
-- **Green:** implementar el código mínimo necesario para que la prueba pase.
-- **Refactor:** mejorar el código sin alterar su comportamiento y manteniendo las pruebas en verde.
-
-### JUnit 5
-
-JUnit 5 es un framework de testing para Java que permite crear y ejecutar pruebas unitarias.
-
-En este ejercicio se utilizan:
-
-- `@Test`: identifica los métodos que contienen pruebas.
-- `@BeforeEach`: ejecuta un método antes de cada prueba, permitiendo preparar un estado inicial independiente.
-
-### AssertJ
-
-AssertJ es una biblioteca que permite escribir aserciones de forma fluida y legible.
-
-En este ejercicio se utilizan:
-
-- `assertThat()`: comprueba que un resultado cumple una condición esperada.
-- `assertThatExceptionOfType()`: comprueba que una operación lanza una excepción del tipo indicado.
 
 ## 📝 Conclusión
 
