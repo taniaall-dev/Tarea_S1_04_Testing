@@ -92,6 +92,27 @@ Se han implementado 10 tests unitarios en la clase `BookManagerTest` para compro
 | `deleteBookByTitle_shouldReduceSizeCollection()` | La eliminación de un libro reduce el tamaño de la colección. |
 | `getSortedBooksAsc_returnsBooksAlphabeticallyWithoutModifyingOriginal()` | La lista devuelta está ordenada alfabéticamente sin modificar el orden de la colección original. |
 
+## ▶️ Ejecución del proyecto y tests
+
+### Ejecutar el proyecto
+
+Este ejercicio está centrado en el testing unitario y no requiere ejecutar una aplicación de forma independiente. La funcionalidad se comprueba mediante los tests de JUnit 5.
+
+### Ejecutar los tests
+
+Los tests pueden ejecutarse de las siguientes maneras:
+
+- **Desde IntelliJ IDEA:** abrir la clase `BookManagerTest` y pulsar el icono verde de ejecución situado junto a la clase para ejecutar todos los tests, o junto a cada método para ejecutar uno individualmente.
+- **Desde Maven:** abrir la terminal en la carpeta raíz del proyecto y ejecutar:
+
+```bash
+mvn test
+```
+
+Este comando compila el proyecto, ejecuta los tests y muestra los resultados de las pruebas.
+
+Los resultados también pueden consultarse en IntelliJ IDEA, donde se indica el número de tests ejecutados, los que han finalizado correctamente y los que han fallado.
+
 ## 📝 Conclusión
 
 Este ejercicio ha permitido dar los primeros pasos en el testing automatizado con JUnit 5 y comprender la importancia de verificar el comportamiento del código mediante pruebas unitarias.
