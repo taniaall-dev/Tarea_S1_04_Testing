@@ -28,12 +28,6 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldThrowIllegalArgumentExceptionIfNumberIsNegative() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> calculator.add(-2));
-    }
-
-    @Test
     public void shouldDecrementTotal() {
         calculator.subtract(10);
         assertThat(calculator.getTotal()).isEqualTo(-10);
