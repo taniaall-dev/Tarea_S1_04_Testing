@@ -13,33 +13,33 @@ Crear las clases Java necesarias y sus correspondientes tests para demostrar dif
 ### Objetivos del ejercicio
 
 - Aprender a utilizar AssertJ para realizar aserciones.
-- Comprobar la igualdad y desigualdad entre objetos.
-- Diferenciar la igualdad de valores de la identidad de referencias.
-- Verificar el contenido y el orden de arrays y colecciones.
-- Comprobar la existencia de elementos y claves.
-- Validar que se producen las excepciones esperadas.
-- Comprobar si un objeto `Optional` está vacío.
+  - Comprobar la igualdad y desigualdad entre objetos.
+  - Diferenciar la igualdad de valores de la identidad de referencias.
+  - Verificar el contenido y el orden de arrays y colecciones.
+  - Comprobar la existencia de elementos y claves.
+  - Validar que se producen las excepciones esperadas.
+  - Comprobar si un objeto `Optional` está vacío.
 
 ## ✨ Características
 
 El ejercicio se organiza en dos clases:
 
 - **AssertJExamples:** contiene los métodos que preparan los datos y los escenarios necesarios para realizar las comprobaciones.
-- **AssertJExamplesTest:** contiene los siete tests unitarios que verifican los resultados mediante aserciones de AssertJ.
+  - **AssertJExamplesTest:** contiene los siete tests unitarios que verifican los resultados mediante aserciones de AssertJ.
 
 ### Ejercicio 1. Igualdad y desigualdad
 
 Se utilizan objetos `Integer` para comprobar:
 
 - `isEqualTo()`: verifica que dos objetos tienen el mismo valor.
-- `isNotEqualTo()`: verifica que sus valores son diferentes.
+  - `isNotEqualTo()`: verifica que sus valores son diferentes.
 
 ### Ejercicio 2. Identidad de referencias
 
 Se utilizan objetos `String` para comprobar:
 
 - `isSameAs()`: verifica que dos referencias apuntan al mismo objeto.
-- `isNotSameAs()`: verifica que apuntan a objetos diferentes.
+  - `isNotSameAs()`: verifica que apuntan a objetos diferentes.
 
 ### Ejercicio 3. Comparación de arrays
 
@@ -54,9 +54,9 @@ Se crea una `ArrayList` que contiene objetos de diferentes tipos: `String`, `Int
 Se utilizan las siguientes aserciones:
 
 - `containsExactly()`: comprueba que los elementos aparecen en el orden esperado.
-- `containsExactlyInAnyOrder()`: comprueba que contiene los mismos elementos, independientemente del orden.
-- `containsOnlyOnce()`: verifica que un elemento aparece una única vez.
-- `doesNotContain()`: comprueba que un elemento no está presente en la lista.
+  - `containsExactlyInAnyOrder()`: comprueba que contiene los mismos elementos, independientemente del orden.
+  - `containsOnlyOnce()`: verifica que un elemento aparece una única vez.
+  - `doesNotContain()`: comprueba que un elemento no está presente en la lista.
 
 ### Ejercicio 5. Comprobación de mapas
 
@@ -85,13 +85,30 @@ A diferencia de las aserciones tradicionales de JUnit, ofrece una API fluida que
 **Dependencias utilizadas:**
 
 - JUnit 5: framework utilizado para organizar y ejecutar los tests.
-- AssertJ: biblioteca utilizada para realizar las aserciones.
+  - AssertJ: biblioteca utilizada para realizar las aserciones.
 
-## 🧪 Ejecución de los tests
+## ▶️ Ejecución del proyecto y tests
 
-Los siete tests se han ejecutado correctamente desde IntelliJ IDEA, obteniendo el siguiente resultado:
+### Ejecutar el proyecto
 
-**7 tests passed.**
+Este ejercicio está centrado en el testing unitario y no requiere ejecutar una aplicación de forma independiente. Las funcionalidades de `AssertJExamples` se comprueban mediante los tests de JUnit 5.
+
+### Ejecutar los tests
+
+Los tests pueden ejecutarse de las siguientes maneras:
+
+- **Desde IntelliJ IDEA:** abrir la clase `AssertJExamplesTest` y pulsar el icono verde de ejecución situado junto a la clase para ejecutar los siete tests, o junto a cada método para ejecutar uno individualmente.
+- **Desde Maven:** abrir la terminal en la carpeta raíz del proyecto y ejecutar:
+
+```bash
+mvn test
+```
+
+Este comando compila el proyecto, ejecuta los tests y muestra los resultados de las pruebas.
+
+Los resultados también pueden consultarse en IntelliJ IDEA, donde se indica el número de tests ejecutados, los que han finalizado correctamente y los que han fallado.
+
+**Resultado obtenido:** 7 tests passed.
 
 ## Conclusión
 
